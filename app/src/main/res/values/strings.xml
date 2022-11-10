@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notino</string>
+    <string name="product_screen_title">Produkty</string>
+    <string name="product_screen_error">Jejda, něco se pokazilo</string>
+    <string name="product_card_favourite_icon">oblibený produkt</string>
+    <string name="product_card_rating_icon">ikona hodnocení</string>
+    <string name="product_card_product_image">obrázek produktu</string>
+    <string name="product_card_price_label_prefix">Od</string>
+    <string name="product_card_price_label_czk">Kč</string>
+    <string name="product_card_to_basket_button_label">Do košíku</string>
+    <string name="product_card_in_basket_button_label">V košíku</string>
+
+</resources>
