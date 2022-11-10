@@ -1,6 +1,5 @@
 package dev.havlicektomas.notinoproducts.presentation
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -45,7 +44,6 @@ class ProductScreenViewModel @Inject constructor(
                         val isFavouriteItem = if (favourites.isEmpty()) false else favourites.contains(FavouriteItem(product.productId))
                         product.copy(isFavourite = isFavouriteItem)
                     }
-                    Log.d("ProductScreenViewModel", "loadProducts success: ${mappedProducts.size}")
                     _uiState.value = UiState.Success(mappedProducts)
                 } else {
                     _uiState.value = UiState.Error(Throwable(result.exceptionOrNull()))
@@ -75,8 +73,8 @@ class ProductScreenViewModel @Inject constructor(
     }
 }
 
-sealed class UiState {
-    object Loading: UiState()
-    data class Success(val data: List<Product>): UiState()
-    data class Error(val error: Throwable): UiState()
+sealed interface UiState {
+    object Loading: UiState
+    data class Success(val data: List<Product>): UiState
+    data class Error(val error: Throwable): UiState
 }
